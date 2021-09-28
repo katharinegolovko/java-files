@@ -18,7 +18,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FilesTest {
 
-
     @Test
     public void testForPdfFile() throws Exception {
         try (InputStream stream = getClass().getClassLoader().getResourceAsStream("file.pdf")) {
@@ -56,7 +55,13 @@ public class FilesTest {
         CSVReader reader = new CSVReader(new FileReader(new File(url.toURI())));
         List<String[]> strings = reader.readAll();
         assertThat(strings).contains(
-                new String[]{"", "SmartLock_WhatsNewUrl", "https://smart.link/ygbs9ownzisl9", "Link to Smart Lock on What's New page", "English", "Liftmaster", "USA"}
+                new String[]{"",
+                        "SmartLock_WhatsNewUrl",
+                        "https://smart.link/ygbs9ownzisl9",
+                        "Link to Smart Lock on What's New page",
+                        "English",
+                        "Liftmaster",
+                        "USA"}
         );
     }
 
